@@ -1,0 +1,54 @@
+/* General body styles */
+body {
+    font-family: Arial, sans-serif; /* Sets the font for the page */
+    background-color: #f4f4f4; /* Light grey background for the page */
+    color: #333; /* Dark grey text color for readability */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Header styles */
+h1 {
+    color: #333;
+}
+
+/* Form styling */
+form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input[type="text"], button {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ddd; /* Light grey border for inputs */
+
+    width: 300px; /* Ensures all text boxes are the same width */
+}
+
+button {
+    background-color: #5cb85c; /* Green background for the button */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c; /* A darker green for hover effect */
+}
+
+/* Styles for the display text */
+#displayText {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #555; /* Slightly darker text for the display text */
+}
+
+/* Wrapper styles */
+.wrapper {
+    width: 90%; /* Or a fixed width like 960px */
+    max-width: 1200px; /* Maximum width of the container */
+    margin: 0 auto; /* Auto margin on both sides to center the container */
+    text-align: center; /* Optional: if you want to center text by default */
+}

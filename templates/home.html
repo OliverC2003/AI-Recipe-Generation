@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipes With Love</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function fetchNext() {
+            $.getJSON('/get-next', function(data) {
+                if (data.image_url) {
+                    $('#displayText').text(data.text);
+                    $('#displayImage').attr('src', data.image_url);
+                    setTimeout(fetchNext, 12000);  // Schedule next update
+                } else {
+                    $('#displayText').text(data.text);  // Show end of data message
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            fetchNext();  // Start fetching immediately or on some user action like a button click
+        });
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+    <h1>
+        Enter your left over Ingredients:
+    </h1>
+    <form action="/" method="post">
+        <input type="text" id="ingredientInput" name="ingredients" placeholder="Ingredients here">
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="displayText">
+        {{ text }}
+    </p>
+
+    <img id="displayImage" src="{{ image_url }}" alt="Recipe Image" style="max-width: 600px; height: auto;">
+    </div>
+</body>
+</html>
